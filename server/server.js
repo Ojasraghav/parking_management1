@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 const connectDb = require("./config/dbConnection");
+const parkingSpaceRoutes = require('./routes/parkingSpaceRoutes');
+
 
 connectDb();
 
@@ -12,6 +14,7 @@ const port = process.env.PORT || 4000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/api', parkingSpaceRoutes);
 
 
 const authRoutes = require('./routes/userRouter');
