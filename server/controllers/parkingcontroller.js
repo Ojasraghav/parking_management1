@@ -25,7 +25,7 @@ exports.createParkingSpace = async (req, res) => {
       message: error.message,
     });
   }
-};
+}; 
 
 // Get all parking spaces
 exports.getAllParkingSpaces = async (req, res) => {
